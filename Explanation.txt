@@ -1,0 +1,25 @@
+Nakon prosleđivanja niza funkciji brothersInTheBar kreira se:
+- pomoćna promeljiva "result" koja služi za brojanje rundi, 
+- dva pomoćna niza "left" i "right" koja se koriste prilikom izbacivanja 3 ista elementa iz originalnog niza, 
+- promenljiva "n" koja sadrži trenutnu dužinu niza, 
+- promenljiva "i" koja služi kao indeks pri kretanju kroz niz.
+
+Ukoliko je niz kraći od 3 elementa ili je indeks "i" došao do pretposlednjeg elementa vraća se vrednost promenljive "result".
+Ukoliko je niz duži ili jednak 3 elementa i indeks "i" nije došao do pretposlednjeg elementa pristupa se proveri niza.
+
+Na osnovu promenljive "i" vrši se provera 3 uzastopna elementa niza. 
+U slučaju kada su ovi elementi jednaki:
+- promenljiva "result" se uvećava za 1,
+- deo niza do prvog elementa smešta se u promenljivu "left",
+- deo niza iza poslednjeg elementa smešta se u promenljivu "right",
+- nakon toga vrši se konkatenacija ova dva niza u početni niz "glasses",
+- ažurira se trenutna dužina niza u "n".
+	Ukoliko je vrednost "i" veća od 1, proverava se da li su prethodna 2 elementa jednaka (kako bi se sledeća sekvenca proverila od prvog ponavljajućeg elementa).
+		Ako su jednaka "i" postaje "i-2", ako nisu jednaka "i" postaje "i-1".
+	Ako je vrednost "i" manja ili jednaka 1, to znači da se sa daljom proverom treba krenuti od početnog elementa niza, te je "i=0".
+
+U slučaju kada nemamo 3 uzastopna elementa, proveravamo da li su druga dva elementa jednaka. 
+	Ako jesu promenljivu "i" uvećavamo za 1 u nadi da u sledećoj iteraciji 3. element bude jednak njima. 
+	Ako nisu promenljivu "i" uvećavamo za 2 i time u sledećoj iteraciji za proveru uzimamo samo poslednji element iz prethodne provera i 2 sledeća.
+
+Kada se izađe iz while petlje u main se vraća broj pronađenih ciklusa i to se štampa u konzolu.	
